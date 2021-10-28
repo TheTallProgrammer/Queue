@@ -7,6 +7,8 @@
 
 Queue::Queue(){
 
+    front = -1;
+
 } // End of constructor
 
 Queue::~Queue(){

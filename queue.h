@@ -4,6 +4,7 @@
 
 #ifndef QUEUE_PROJECT_QUEUE_H
 #define QUEUE_PROJECT_QUEUE_H
+
 #define QUEUESIZE 10
 #include "data.h"
 
