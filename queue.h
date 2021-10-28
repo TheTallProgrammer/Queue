@@ -25,6 +25,7 @@ class Queue{
 
     private:
 
+        int front;
 
 
 };
