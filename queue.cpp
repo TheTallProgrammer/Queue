@@ -3,3 +3,18 @@
 //
 
 #include "queue.h"
+
+class Queue{
+
+    public:
+
+    // Constructor/Destructor
+    Queue();
+    ~Queue();
+
+
+    private:
+    
+
+
+};
