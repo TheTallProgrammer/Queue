@@ -16,6 +16,8 @@ public:
 
     enqueue();
     dequeue();
+    printQueue();
+    getQueueElement();
 
 
 private:
