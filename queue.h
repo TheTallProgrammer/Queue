@@ -8,19 +8,20 @@
 
 class Queue{
 
-public:
+    public:
 
-    // Constructor/Destructor
-    Queue();
-    ~Queue();
+        // Constructor/Destructor
+        Queue();
+        ~Queue();
 
-    enqueue();
-    dequeue();
-    printQueue();
-    getQueueElement();
+        // Methods
+        bool enqueue();
+        bool dequeue();
+        void printQueue();
+        void getQueueElement();
 
 
-private:
+    private:
 
 
 
