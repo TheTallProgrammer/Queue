@@ -36,3 +36,11 @@ void Queue::printQueue(){
 void Queue::getQueueElement(){
 
 } // End of getQueueElement
+
+bool Queue::isEmpty() {
+
+    bool isEmpt = false;
+
+    return isEmpt;
+
+} // End of isEmpty

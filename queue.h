@@ -20,6 +20,7 @@ class Queue{
         bool dequeue();
         void printQueue();
         void getQueueElement();
+        bool isEmpty();
 
 
     private:
