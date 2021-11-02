@@ -7,7 +7,7 @@
 
 Queue::Queue(){
     front = 0;
-    rear = 0;
+    rear = -1;
 } // End of constructor
 
 Queue::~Queue(){
@@ -25,6 +25,7 @@ bool Queue::enqueue(int id, const string*data){
             newData->data = *data;
             // Executes code and enqueues the data into the queue, then increments the rear int
             queue[++rear] = newData;
+            std::cout << "rear position: " << rear << std::endl;
             didEnqueue = true;
         }
     }
@@ -41,7 +42,7 @@ bool Queue::dequeue(){
 
 void Queue::printQueue(){
     if(!isEmpty()) {
-        for (int i = 0; i < rear; i++) {
+        for (int i = 0; i < rear+1; i++) {
             std::cout << "position: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
         }
     }

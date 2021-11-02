@@ -43,6 +43,23 @@ int main() {
         std::cout << "no" << std::endl;
     }
 
+    std::cout << "" << std::endl;
+
+    for(int i =0; i < 5; i++){
+        std::cout << "inserting element: " << ids[i];
+        const std::string tempString = data[i];
+        tempBool = queue.enqueue(ids[i], &tempString);
+        std::cout << " : Success? ";
+        if(tempBool == true){
+            std::cout << "yes" << std::endl;
+        } else {
+            std::cout << "no" << std::endl;
+        }
+    }
+
+    std::cout << "\nPrinting" << std::endl;
+    queue.printQueue();
+
 
 
     return 0;
