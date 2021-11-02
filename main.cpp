@@ -35,6 +35,13 @@ int main() {
     bool tempBool;
     Data data1;
 
+    std::cout << "is queue empty? ";
+    tempBool = queue.isEmpty();
+    if(tempBool == true){
+        std::cout << "yes" << std::endl;
+    } else {
+        std::cout << "no" << std::endl;
+    }
 
 
 
