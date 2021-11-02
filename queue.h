@@ -17,7 +17,7 @@ class Queue{
         ~Queue();
 
         // Methods
-        bool enqueue();
+        bool enqueue(int, const string *);
         bool dequeue();
         void printQueue();
         void getQueueElement();

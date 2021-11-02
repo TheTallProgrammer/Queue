@@ -15,7 +15,7 @@ Queue::~Queue(){
 
 } // End of destructor
 
-bool Queue::enqueue(){
+bool Queue::enqueue(int id, const string*data){
 
     bool didEnqueue = false;
 
