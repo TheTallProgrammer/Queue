@@ -10,7 +10,7 @@ using std::string;
 
 struct Data {
     int id;
-    string information;
+    string data;
 };
 
 #endif //QUEUE_DATA_H

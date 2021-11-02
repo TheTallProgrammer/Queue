@@ -15,17 +15,20 @@ Queue::~Queue(){
 } // End of destructor
 
 bool Queue::enqueue(int id, const string*data){
-
     bool didEnqueue = false;
-
     if(rear < QUEUESIZE - 1){
         if(id >= 0 && data->length() > 0){
-            
+            // Allocating new memory for new Data struct that will be added to the queue
+            Data *newData = new Data;
+            newData->id = id;
+            // Have to dereference the data string in order to get its contents
+            newData->data = *data;
+            // Executes code and enqueues the data into the queue, then increments the rear int
+            queue[++rear] = newData;
+            didEnqueue = true;
         }
     }
-
     return didEnqueue;
-
 } // End of enqueue
 
 bool Queue::dequeue(){
@@ -37,7 +40,9 @@ bool Queue::dequeue(){
 } // End of dequeue
 
 void Queue::printQueue(){
-
+    for(int i =0; i < rear; i++){
+        std::cout << "position: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
+    }
 } // End of printQueue
 
 void Queue::getQueueElement(){

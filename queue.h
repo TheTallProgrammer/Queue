@@ -7,6 +7,7 @@
 
 #define QUEUESIZE 10
 #include "data.h"
+#include <iostream>
 
 class Queue{
 
