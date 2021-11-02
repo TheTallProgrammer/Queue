@@ -23,10 +23,10 @@ class Queue{
         void getQueueElement();
         bool isEmpty();
 
-
     private:
 
         int front;
+        Data *queue[QUEUESIZE];
 
 
 };
