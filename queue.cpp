@@ -6,10 +6,8 @@
 
 
 Queue::Queue(){
-
-    front = -1;
+    front = 0;
     rear = 0;
-
 } // End of constructor
 
 Queue::~Queue(){
@@ -19,6 +17,12 @@ Queue::~Queue(){
 bool Queue::enqueue(int id, const string*data){
 
     bool didEnqueue = false;
+
+    if(rear < QUEUESIZE - 1){
+        if(id >= 0 && data->length() > 0){
+            
+        }
+    }
 
     return didEnqueue;
 
