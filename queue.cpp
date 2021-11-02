@@ -8,6 +8,7 @@
 Queue::Queue(){
 
     front = -1;
+    rear = 0;
 
 } // End of constructor
 

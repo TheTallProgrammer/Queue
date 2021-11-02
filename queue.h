@@ -25,7 +25,7 @@ class Queue{
 
     private:
 
-        int front;
+        int front, rear;
         Data *queue[QUEUESIZE];
 
 
