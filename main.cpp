@@ -32,6 +32,10 @@ int main() {
 
     // ------------------- INITIAL TESTS ------------------- //
     Queue queue;
+    bool tempBool;
+    Data data1;
+
+
 
 
     return 0;

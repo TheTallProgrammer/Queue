@@ -40,8 +40,10 @@ bool Queue::dequeue(){
 } // End of dequeue
 
 void Queue::printQueue(){
-    for(int i =0; i < rear; i++){
-        std::cout << "position: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
+    if(!isEmpty()) {
+        for (int i = 0; i < rear; i++) {
+            std::cout << "position: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
+        }
     }
 } // End of printQueue
 
@@ -50,9 +52,9 @@ void Queue::getQueueElement(){
 } // End of getQueueElement
 
 bool Queue::isEmpty() {
-
-    bool isEmpt = false;
-
+    bool isEmpt = true;
+    if(rear > 0){
+        isEmpt = false;
+    }
     return isEmpt;
-
 } // End of isEmpty
