@@ -25,7 +25,6 @@ bool Queue::enqueue(int id, const string*data){
             newData->data = *data;
             // Executes code and enqueues the data into the queue, then increments the rear int
             queue[++rear] = newData;
-            std::cout << "rear position: " << rear << std::endl;
             didEnqueue = true;
         }
     }
