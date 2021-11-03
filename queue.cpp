@@ -50,7 +50,15 @@ void Queue::printQueue(){
 } // End of printQueue
 
 void Queue::getQueueElement(int id, Data *data){
-
+    for(int i =0; i < count; i++){
+        if(queue[i]->id == id){
+            data->id = queue[i]->id;
+            data->data = queue[i]->data;
+        } else {
+            data->id = -1;
+            data->data = "N/A";
+        }
+    }
 } // End of getQueueElement
 
 bool Queue::isEmpty() {return back==0;} // End of isEmpty

@@ -75,6 +75,8 @@ int main() {
     std::cout << "\ncurrent size: " << queue.size() << std::endl;
 
     std::cout << "\nRetrieving queue with id: " << ids[1] << std::endl;
+    queue.getQueueElement(ids[1], &data1);
+    std::cout << "Retrieved id: " << data1.id << " : data: " << data1.data << std::endl;
 
 
     return 0;
