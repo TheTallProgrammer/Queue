@@ -54,9 +54,6 @@ void Queue::getQueueElement(int id, Data *data){
         if(queue[i]->id == id){
             data->id = queue[i]->id;
             data->data = queue[i]->data;
-        } else {
-            data->id = -1;
-            data->data = "N/A";
         }
     }
 } // End of getQueueElement
@@ -73,6 +70,4 @@ bool Queue::peek(Data *data){
     return canPeek;
 } // End of peek
 
-int Queue::size(){
-    return count;
-} // End of size
+int Queue::size(){return count;} // End of size

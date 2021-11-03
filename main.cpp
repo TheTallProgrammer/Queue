@@ -34,6 +34,7 @@ int main() {
     Queue queue;
     bool tempBool;
     Data data1;
+    Data data2;
 
     std::cout << "is queue empty? ";
     tempBool = queue.isEmpty();
@@ -63,20 +64,20 @@ int main() {
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
 
-    std::cout << "\ncan peek?" << std::endl;
+    std::cout << "\ncan peek?";
     tempBool = queue.peek(&data1);
     if(tempBool == true){
-        std::cout << "yes" << std::endl;
+        std::cout << " yes" << std::endl;
         std::cout << "Peeked id: " << data1.id << " : data: " << data1.data << std::endl;
     } else {
-        std::cout << "no" << std::endl;
+        std::cout << " no" << std::endl;
     }
 
     std::cout << "\ncurrent size: " << queue.size() << std::endl;
 
     std::cout << "\nRetrieving queue with id: " << ids[1] << std::endl;
-    queue.getQueueElement(ids[1], &data1);
-    std::cout << "Retrieved id: " << data1.id << " : data: " << data1.data << std::endl;
+    queue.getQueueElement(ids[1], &data2);
+    std::cout << "Retrieved id: " << data2.id << " : data: " << data2.data << std::endl;
 
 
     return 0;
