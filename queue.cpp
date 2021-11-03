@@ -27,6 +27,7 @@ bool Queue::enqueue(int id, const string*data){
             // Executes code and enqueues the data into the queue, then increments the back int
             queue[++back] = newData;
             didEnqueue = true;
+            count++;
         }
     }
     return didEnqueue;
@@ -65,5 +66,5 @@ bool Queue::peek(Data *data){
 } // End of peek
 
 int Queue::size(){
-
+    return count;
 } // End of size
