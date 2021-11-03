@@ -63,7 +63,16 @@ int main() {
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
 
+    std::cout << "\ncan peek?" << std::endl;
+    tempBool = queue.peek(&data1);
+    if(tempBool == true){
+        std::cout << "no" << std::endl;
+    } else {
+        std::cout << "yes" << std::endl;
+        std::cout << "\tPeeked id: " << data1.id << " : data: " << data1.data << std::endl;
+    }
 
+    std::cout << "current size: " << queue.size() << std::endl;
 
     return 0;
 }

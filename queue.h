@@ -31,7 +31,6 @@ class Queue{
         int front, back, count;
         Data *queue[QUEUESIZE];
 
-
 };
 
 #endif //QUEUE_PROJECT_QUEUE_H
