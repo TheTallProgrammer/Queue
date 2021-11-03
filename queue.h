@@ -19,7 +19,7 @@ class Queue{
 
         // Methods
         bool enqueue(int, const string *);
-        bool dequeue();
+        bool dequeue(Data *);
         void printQueue();
         void getQueueElement(int, Data *);
         bool isEmpty();

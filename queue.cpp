@@ -33,24 +33,32 @@ bool Queue::enqueue(int id, const string*data){
     return didEnqueue;
 } // End of enqueue
 
-bool Queue::dequeue(){
-
+bool Queue::dequeue(Data *data){
     bool didDequeue = false;
-
+    if(!isEmpty()){
+        *data = *queue[front];
+        delete queue[front];
+        front = (front + 1) % QUEUESIZE;
+        didDequeue = true;
+        count--;
+    }
+    else {
+        data->id = -1;
+        data->data = "";
+    }
     return didDequeue;
-
 } // End of dequeue
 
 void Queue::printQueue(){
     if(!isEmpty()) {
-        for (int i = 0; i < back+1; i++) {
+        for (int i = front; i < back+1; i++) {
             std::cout << "\tposition: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
         }
     }
 } // End of printQueue
 
 void Queue::getQueueElement(int id, Data *data){
-    for(int i =0; i < count; i++){
+    for(int i =front; i < count; i++){
         if(queue[i]->id == id){
             data->id = queue[i]->id;
             data->data = queue[i]->data;

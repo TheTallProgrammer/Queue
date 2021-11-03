@@ -35,6 +35,7 @@ int main() {
     bool tempBool;
     Data data1;
     Data data2;
+    Data data3;
 
     std::cout << "is queue empty? ";
     tempBool = queue.isEmpty();
@@ -78,6 +79,17 @@ int main() {
     std::cout << "\nRetrieving queue with id: " << ids[1] << std::endl;
     queue.getQueueElement(ids[1], &data2);
     std::cout << "Retrieved id: " << data2.id << " : data: " << data2.data << std::endl;
+
+    std::cout << "\nAttempting to dequeue front element : Success? ";
+    tempBool = queue.dequeue(&data3);
+    if(tempBool == true){
+        std::cout << "yes" << std::endl;
+    } else {
+        std::cout << "no" << std::endl;
+    }
+
+    std::cout << "\nPrinting:" << std::endl;
+    queue.printQueue();
 
 
     return 0;
