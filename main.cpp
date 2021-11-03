@@ -74,7 +74,7 @@ int main() {
         std::cout << " no" << std::endl;
     }
 
-    std::cout << "\ncurrent size: " << queue.size() << std::endl;
+
 
     std::cout << "\nRetrieving queue with id: " << ids[1] << std::endl;
     queue.getQueueElement(ids[1], &data2);
@@ -87,6 +87,8 @@ int main() {
     } else {
         std::cout << "no" << std::endl;
     }
+
+    std::cout << "\ncurrent size: " << queue.size() << std::endl;
 
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();

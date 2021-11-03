@@ -4,7 +4,6 @@
 
 #include "queue.h"
 
-
 Queue::Queue(){
     front = 0;
     back = -1;
