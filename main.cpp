@@ -37,11 +37,14 @@ int main() {
 
     std::cout << "is queue empty? ";
     tempBool = queue.isEmpty();
-    if(tempBool == true){
+    if(tempBool == false){
         std::cout << "yes" << std::endl;
     } else {
         std::cout << "no" << std::endl;
     }
+
+    std::cout << "\nPrinting:" << std::endl;
+    queue.printQueue();
 
     std::cout << "" << std::endl;
 
@@ -50,14 +53,14 @@ int main() {
         const std::string tempString = data[i];
         tempBool = queue.enqueue(ids[i], &tempString);
         std::cout << " : Success? ";
-        if(tempBool == true){
-            std::cout << "yes" << std::endl;
-        } else {
+        if(tempBool == false){
             std::cout << "no" << std::endl;
+        } else {
+            std::cout << "yes" << std::endl;
         }
     }
 
-    std::cout << "\nPrinting" << std::endl;
+    std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
 
 

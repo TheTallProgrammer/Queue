@@ -7,7 +7,7 @@
 
 Queue::Queue(){
     front = 0;
-    rear = -1;
+    back = -1;
 } // End of constructor
 
 Queue::~Queue(){
@@ -16,15 +16,15 @@ Queue::~Queue(){
 
 bool Queue::enqueue(int id, const string*data){
     bool didEnqueue = false;
-    if(rear < QUEUESIZE - 1){
+    if(back < QUEUESIZE - 1){
         if(id >= 0 && data->length() > 0){
             // Allocating new memory for new Data struct that will be added to the queue
             Data *newData = new Data;
             newData->id = id;
             // Have to dereference the data string in order to get its contents
             newData->data = *data;
-            // Executes code and enqueues the data into the queue, then increments the rear int
-            queue[++rear] = newData;
+            // Executes code and enqueues the data into the queue, then increments the back int
+            queue[++back] = newData;
             didEnqueue = true;
         }
     }
@@ -40,9 +40,9 @@ bool Queue::dequeue(){
 } // End of dequeue
 
 void Queue::printQueue(){
-    if(!isEmpty()) {
-        for (int i = 0; i < rear+1; i++) {
-            std::cout << "position: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
+    if(isEmpty()) {
+        for (int i = 0; i < back+1; i++) {
+            std::cout << "\tposition: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
         }
     }
 } // End of printQueue
@@ -51,10 +51,4 @@ void Queue::getQueueElement(){
 
 } // End of getQueueElement
 
-bool Queue::isEmpty() {
-    bool isEmpt = true;
-    if(rear > 0){
-        isEmpt = false;
-    }
-    return isEmpt;
-} // End of isEmpty
+bool Queue::isEmpty() {return back>0;} // End of isEmpty
