@@ -78,3 +78,13 @@ bool Queue::peek(Data *data){
 } // End of peek
 
 int Queue::size(){return count;} // End of size
+
+void Queue::clearQueue(Data *data){
+    if(!isEmpty()) {
+        for (int i = 0; i < back; i++) {
+            *data = *queue[i];
+            delete queue[i];
+            count--;
+        }
+    }
+} // End of clearQueue

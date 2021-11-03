@@ -36,6 +36,7 @@ int main() {
     Data data1;
     Data data2;
     Data data3;
+    Data data4;
 
     std::cout << "is queue empty? ";
     tempBool = queue.isEmpty();
@@ -87,6 +88,14 @@ int main() {
     } else {
         std::cout << "no" << std::endl;
     }
+
+    std::cout << "\ncurrent size: " << queue.size() << std::endl;
+
+    std::cout << "\nPrinting:" << std::endl;
+    queue.printQueue();
+
+    std::cout << "\nclearing" << std::endl;
+    queue.clearQueue(&data4);
 
     std::cout << "\ncurrent size: " << queue.size() << std::endl;
 
