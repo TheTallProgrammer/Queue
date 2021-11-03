@@ -23,7 +23,7 @@ class Queue{
         void printQueue();
         void getQueueElement();
         bool isEmpty();
-        int peek();
+        bool peek(Data *);
         int size();
 
     private:

@@ -54,11 +54,14 @@ void Queue::getQueueElement(){
 
 bool Queue::isEmpty() {return back<1;} // End of isEmpty
 
-int Queue::peek(){
+bool Queue::peek(Data *data){
+    bool canPeek = false;
     if(!isEmpty()){
-
+        data->id = queue[front]->id;
+        data->data = queue[front]->data;
+        canPeek = true;
     }
-
+    return canPeek;
 } // End of peek
 
 int Queue::size(){
