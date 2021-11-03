@@ -6,8 +6,9 @@
 
 
 Queue::Queue(){
-    front = 0;
+    front, count = 0;
     back = -1;
+    count = 0;
 } // End of constructor
 
 Queue::~Queue(){
@@ -40,7 +41,7 @@ bool Queue::dequeue(){
 } // End of dequeue
 
 void Queue::printQueue(){
-    if(isEmpty()) {
+    if(!isEmpty()) {
         for (int i = 0; i < back+1; i++) {
             std::cout << "\tposition: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
         }
@@ -51,4 +52,15 @@ void Queue::getQueueElement(){
 
 } // End of getQueueElement
 
-bool Queue::isEmpty() {return back>0;} // End of isEmpty
+bool Queue::isEmpty() {return back<1;} // End of isEmpty
+
+int Queue::peek(){
+    if(!isEmpty()){
+
+    }
+
+} // End of peek
+
+int Queue::size(){
+
+} // End of size

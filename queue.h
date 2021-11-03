@@ -23,10 +23,12 @@ class Queue{
         void printQueue();
         void getQueueElement();
         bool isEmpty();
+        int peek();
+        int size();
 
     private:
 
-        int front, back;
+        int front, back, count;
         Data *queue[QUEUESIZE];
 
 

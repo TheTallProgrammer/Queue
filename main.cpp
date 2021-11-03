@@ -37,10 +37,10 @@ int main() {
 
     std::cout << "is queue empty? ";
     tempBool = queue.isEmpty();
-    if(tempBool == false){
-        std::cout << "yes" << std::endl;
-    } else {
+    if(tempBool == true){
         std::cout << "no" << std::endl;
+    } else {
+        std::cout << "yes" << std::endl;
     }
 
     std::cout << "\nPrinting:" << std::endl;
