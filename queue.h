@@ -21,7 +21,7 @@ class Queue{
         bool enqueue(int, const string *);
         bool dequeue();
         void printQueue();
-        void getQueueElement();
+        void getQueueElement(int);
         bool isEmpty();
         bool peek(Data *);
         int size();
