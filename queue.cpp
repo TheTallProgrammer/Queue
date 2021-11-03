@@ -49,7 +49,7 @@ void Queue::printQueue(){
     }
 } // End of printQueue
 
-void Queue::getQueueElement(int id){
+void Queue::getQueueElement(int id, Data *data){
 
 } // End of getQueueElement
 
