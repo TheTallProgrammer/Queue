@@ -6,7 +6,7 @@
 
 
 Queue::Queue(){
-    front, count = 0;
+    front = 0;
     back = -1;
     count = 0;
 } // End of constructor
@@ -49,11 +49,11 @@ void Queue::printQueue(){
     }
 } // End of printQueue
 
-void Queue::getQueueElement(){
+void Queue::getQueueElement(int id){
 
 } // End of getQueueElement
 
-bool Queue::isEmpty() {return back<1;} // End of isEmpty
+bool Queue::isEmpty() {return back==0;} // End of isEmpty
 
 bool Queue::peek(Data *data){
     bool canPeek = false;
