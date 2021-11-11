@@ -25,7 +25,7 @@ class Queue{
         bool isEmpty();
         bool peek(Data *);
         int size();
-        void clearQueue(Data *);
+        void clearQueue();
 
     private:
 

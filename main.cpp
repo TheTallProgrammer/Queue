@@ -94,8 +94,22 @@ int main() {
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
 
+    std::cout << "inserting element: " << ids[1];
+    const std::string tempString = data[1];
+    tempBool = queue.enqueue(ids[1], &tempString);
+    std::cout << " : Success? ";
+    if(tempBool == false){
+        std::cout << "no" << std::endl;
+    } else {
+        std::cout << "yes" << std::endl;
+    }
+
+
+    std::cout << "\nPrinting:" << std::endl;
+    queue.printQueue();
+
     std::cout << "\nclearing" << std::endl;
-    queue.clearQueue(&data4);
+    queue.clearQueue();
 
     std::cout << "\ncurrent size: " << queue.size() << std::endl;
 

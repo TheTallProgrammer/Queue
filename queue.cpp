@@ -11,7 +11,7 @@ Queue::Queue(){
 } // End of constructor
 
 Queue::~Queue(){
-
+    clearQueue();
 } // End of destructor
 
 bool Queue::enqueue(int id, const string*data){
@@ -35,7 +35,8 @@ bool Queue::enqueue(int id, const string*data){
 bool Queue::dequeue(Data *data){
     bool didDequeue = false;
     if(!isEmpty()){
-        *data = *queue[front];
+        data->id = queue[front]->id;
+        data->data = queue[front]->data;
         delete queue[front];
         front = (front + 1) % QUEUESIZE;
         didDequeue = true;
@@ -50,9 +51,11 @@ bool Queue::dequeue(Data *data){
 
 void Queue::printQueue(){
     if(!isEmpty()) {
-        for (int i = front; i < back+1; i++) {
+        for (int i = front; i <= back; i++) {
             std::cout << "\tposition: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
         }
+    } else {
+        std::cout << "\tno data to print" << std::endl;
     }
 } // End of printQueue
 
@@ -79,12 +82,23 @@ bool Queue::peek(Data *data){
 
 int Queue::size(){return count;} // End of size
 
-void Queue::clearQueue(Data *data){
+void Queue::clearQueue(){
     if(!isEmpty()) {
-        for (int i = 0; i < back; i++) {
-            *data = *queue[i];
-            delete queue[i];
+        while (count >= front) {
+            std::cout << "Deleting at position " << count << std::endl;
+//            data->id = queue[count]->id;
+//            data->data = queue[count]->data;
+            delete queue[count];
             count--;
+            back = count;
         }
     }
+//        for (int i = count; i >= front; i--) {
+//            std::cout << "i = " << count << " : front = " << front << std::endl;
+//            data->id = queue[i]->id;
+//            data->data = queue[i]->data;
+//            delete queue[count];
+//            printQueue();
+//            count--;
+//        }
 } // End of clearQueue
