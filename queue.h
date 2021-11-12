@@ -29,7 +29,7 @@ class Queue{
 
     private:
 
-        int front, back, count;
+        int front, back;
         Data *queue[QUEUESIZE];
 
 };

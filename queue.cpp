@@ -6,7 +6,6 @@
 
 Queue::Queue(){
     front = 0;
-    count = 0;
     back = 0;
 } // End of constructor
 
