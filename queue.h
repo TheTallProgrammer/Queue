@@ -26,6 +26,7 @@ class Queue{
         bool peek(Data *);
         int size();
         void clearQueue();
+        bool testDuplicate(int *);
 
     private:
 

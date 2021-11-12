@@ -158,5 +158,29 @@ int main() {
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
 
+    int dupeIds[2] = {1,1};
+    std::string string = data[0];
+    std::cout << "\ninserting element: " << dupeIds[0];
+    tempBool = queue.enqueue(dupeIds[0], &string);
+    std::cout << " : Success? ";
+    if(tempBool == false){
+        std::cout << "no" << std::endl;
+    } else {
+        std::cout << "yes" << std::endl;
+    }
+
+    std::string newstring = data[1];
+    std::cout << "inserting element: " << dupeIds[1];
+    tempBool = queue.enqueue(dupeIds[1], &newstring);
+    std::cout << " : Success? ";
+    if(tempBool == false){
+        std::cout << "no" << std::endl;
+    } else {
+        std::cout << "yes" << std::endl;
+    }
+
+    std::cout << "\nPrinting:" << std::endl;
+    queue.printQueue();
+
     return 0;
 }

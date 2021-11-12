@@ -15,16 +15,20 @@ Queue::~Queue(){
 
 bool Queue::enqueue(int id, const string*data){
     bool didEnqueue = false;
+    bool hasDupe = false;
     if(back < QUEUESIZE){
         if(id >= 0 && data->length() > 0){
-            // Allocating new memory for new Data struct that will be added to the queue
-            Data *newData = new Data;
-            newData->id = id;
-            // Have to dereference the data string in order to get its contents
-            newData->data = *data;
-            // Executes code and enqueues the data into the queue, then increments the back int
-            queue[back++] = newData;
-            didEnqueue = true;
+            hasDupe = testDuplicate(&id);
+            if(!hasDupe){
+                // Allocating new memory for new Data struct that will be added to the queue
+                Data *newData = new Data;
+                newData->id = id;
+                // Have to dereference the data string in order to get its contents
+                newData->data = *data;
+                // Executes code and enqueues the data into the queue, then increments the back int
+                queue[back++] = newData;
+                didEnqueue = true;
+            }
         }
     }
     return didEnqueue;
@@ -87,3 +91,13 @@ void Queue::clearQueue(){
         }
     }
 } // End of clearQueue
+
+bool Queue::testDuplicate(int *id) {
+    bool hasDupe = false;
+    for(int i = 0; i < back; i++){
+        if(queue[i]->id == *id){
+            hasDupe = true;
+        }
+    }
+    return hasDupe;
+} // End of testDuplicate
