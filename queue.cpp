@@ -33,12 +33,10 @@ bool Queue::enqueue(int id, const string*data){
 bool Queue::dequeue(){
     bool didDequeue = false;
     if(!isEmpty()){
-        std::cout << "\nis empty" << std::endl;
         for(int i =0; i < back-1; i++){
             queue[i]->id = queue[i+1]->id;
             queue[i]->data = queue[i+1]->data;
         }
-        std::cout << "outside loop" << std::endl;
         queue[back-1]->id = 0;
         queue[back-1]->data = "";
         delete queue[back-1];

@@ -157,6 +157,6 @@ int main() {
 
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
-    
+
     return 0;
 }
