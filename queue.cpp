@@ -15,10 +15,9 @@ Queue::~Queue(){
 
 bool Queue::enqueue(int id, const string*data){
     bool didEnqueue = false;
-    bool hasDupe = false;
     if(back < QUEUESIZE){
         if(id >= 0 && data->length() > 0){
-            hasDupe = testDuplicate(&id);
+            bool hasDupe = testDuplicate(&id);
             if(!hasDupe){
                 // Allocating new memory for new Data struct that will be added to the queue
                 Data *newData = new Data;
