@@ -130,6 +130,33 @@ int main() {
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
 
+    // == ADDING ELEMENT ==
 
+    for(int i =0; i < number_test_cases; i++){
+        std::cout << "inserting element: " << ids[i];
+        const std::string tempString = data[i];
+        tempBool = queue.enqueue(ids[i], &tempString);
+        std::cout << " : Success? ";
+        if(tempBool == false){
+            std::cout << "no" << std::endl;
+        } else {
+            std::cout << "yes" << std::endl;
+        }
+    }
+
+    std::cout << "\nPrinting:" << std::endl;
+    queue.printQueue();
+    std::cout << "\ncurrent size: " << queue.size() << std::endl;
+
+    // == CLEARING ==
+
+    std::cout << "\nclearing" << std::endl;
+    queue.clearQueue();
+
+    std::cout << "\ncurrent size: " << queue.size() << std::endl;
+
+    std::cout << "\nPrinting:" << std::endl;
+    queue.printQueue();
+    
     return 0;
 }
