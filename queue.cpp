@@ -50,7 +50,6 @@ bool Queue::dequeue(){
 
 void Queue::printQueue(){
     if(!isEmpty()) {
-        std::cout << "back is: " << back << std::endl;
         for (int i = 0; i < back; i++) {
             std::cout << "\tposition: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
         }
