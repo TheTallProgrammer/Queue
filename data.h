@@ -11,6 +11,7 @@ using std::string;
 struct Data {
     int id;
     string data;
+    Data *next, *prev;
 };
 
 #endif //QUEUE_DATA_H

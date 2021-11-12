@@ -38,20 +38,25 @@ int main() {
     Data data3;
     Data data4;
 
+    // == INITIAL TESTS ==
+
     std::cout << "is queue empty? ";
     tempBool = queue.isEmpty();
     if(tempBool == true){
-        std::cout << "no" << std::endl;
-    } else {
         std::cout << "yes" << std::endl;
+    } else {
+        std::cout << "no" << std::endl;
     }
 
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
+    std::cout << "\ncurrent size: " << queue.size() << std::endl;
 
     std::cout << "" << std::endl;
 
-    for(int i =0; i < 5; i++){
+    // == ADDING ELEMENT ==
+
+    for(int i =0; i < number_test_cases; i++){
         std::cout << "inserting element: " << ids[i];
         const std::string tempString = data[i];
         tempBool = queue.enqueue(ids[i], &tempString);
@@ -65,6 +70,9 @@ int main() {
 
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
+    std::cout << "\ncurrent size: " << queue.size() << std::endl;;
+
+    // == PEEKING ==
 
     std::cout << "\ncan peek?";
     tempBool = queue.peek(&data1);
@@ -75,14 +83,16 @@ int main() {
         std::cout << " no" << std::endl;
     }
 
-
+    // == RETRIEVING ==
 
     std::cout << "\nRetrieving queue with id: " << ids[1] << std::endl;
     queue.getQueueElement(ids[1], &data2);
     std::cout << "Retrieved id: " << data2.id << " : data: " << data2.data << std::endl;
 
+    // == REMOVING ELEMENT ==
+
     std::cout << "\nAttempting to dequeue front element : Success? ";
-    tempBool = queue.dequeue(&data3);
+    tempBool = queue.dequeue();
     if(tempBool == true){
         std::cout << "yes" << std::endl;
     } else {
@@ -93,6 +103,8 @@ int main() {
 
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
+
+    // == ADDING ELEMENT ==
 
     std::cout << "inserting element: " << ids[1];
     const std::string tempString = data[1];
@@ -107,6 +119,8 @@ int main() {
 
     std::cout << "\nPrinting:" << std::endl;
     queue.printQueue();
+
+    // == CLEARING ==
 
     std::cout << "\nclearing" << std::endl;
     queue.clearQueue();

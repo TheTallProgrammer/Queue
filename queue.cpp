@@ -6,8 +6,8 @@
 
 Queue::Queue(){
     front = 0;
-    back = -1;
     count = 0;
+    back = 0;
 } // End of constructor
 
 Queue::~Queue(){
@@ -16,7 +16,7 @@ Queue::~Queue(){
 
 bool Queue::enqueue(int id, const string*data){
     bool didEnqueue = false;
-    if(back < QUEUESIZE - 1){
+    if(back < QUEUESIZE){
         if(id >= 0 && data->length() > 0){
             // Allocating new memory for new Data struct that will be added to the queue
             Data *newData = new Data;
@@ -24,34 +24,35 @@ bool Queue::enqueue(int id, const string*data){
             // Have to dereference the data string in order to get its contents
             newData->data = *data;
             // Executes code and enqueues the data into the queue, then increments the back int
-            queue[++back] = newData;
+            queue[back++] = newData;
             didEnqueue = true;
-            count++;
         }
     }
     return didEnqueue;
 } // End of enqueue
 
-bool Queue::dequeue(Data *data){
+bool Queue::dequeue(){
     bool didDequeue = false;
     if(!isEmpty()){
-        data->id = queue[front]->id;
-        data->data = queue[front]->data;
-        delete queue[front];
-        front = (front + 1) % QUEUESIZE;
+        std::cout << "\nis empty" << std::endl;
+        for(int i =0; i < back-1; i++){
+            queue[i]->id = queue[i+1]->id;
+            queue[i]->data = queue[i+1]->data;
+        }
+        std::cout << "outside loop" << std::endl;
+        queue[back-1]->id = 0;
+        queue[back-1]->data = "";
+        delete queue[back-1];
+        back--;
         didDequeue = true;
-        count--;
-    }
-    else {
-        data->id = -1;
-        data->data = "";
     }
     return didDequeue;
 } // End of dequeue
 
 void Queue::printQueue(){
     if(!isEmpty()) {
-        for (int i = front; i <= back; i++) {
+        std::cout << "back is: " << back << std::endl;
+        for (int i = 0; i < back; i++) {
             std::cout << "\tposition: " << i << " : id: " << queue[i]->id << " : data: " << queue[i]->data << std::endl;
         }
     } else {
@@ -60,7 +61,7 @@ void Queue::printQueue(){
 } // End of printQueue
 
 void Queue::getQueueElement(int id, Data *data){
-    for(int i =front; i < count; i++){
+    for(int i =0; i < back; i++){
         if(queue[i]->id == id){
             data->id = queue[i]->id;
             data->data = queue[i]->data;
@@ -80,25 +81,13 @@ bool Queue::peek(Data *data){
     return canPeek;
 } // End of peek
 
-int Queue::size(){return count;} // End of size
+int Queue::size(){return back;} // End of size
 
 void Queue::clearQueue(){
     if(!isEmpty()) {
-        while (count >= front) {
-            std::cout << "Deleting at position " << count << std::endl;
-//            data->id = queue[count]->id;
-//            data->data = queue[count]->data;
-            delete queue[count];
-            count--;
-            back = count;
+        for(int i = back-1; i >= 0; i--) {
+            delete queue[i];
+            back--;
         }
     }
-//        for (int i = count; i >= front; i--) {
-//            std::cout << "i = " << count << " : front = " << front << std::endl;
-//            data->id = queue[i]->id;
-//            data->data = queue[i]->data;
-//            delete queue[count];
-//            printQueue();
-//            count--;
-//        }
 } // End of clearQueue
